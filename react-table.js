@@ -3194,7 +3194,7 @@ var ReactTable = function (_Methods) {
           _extends({
             key: i + '-' + column.id,
             className: classnames(classes),
-            style: _extends({}, styles, flexStyles)
+            style: _extends({}, flexStyles, styles)
           }, rest),
           _.normalizeComponent(column.Header, {
             data: sortedData,
@@ -3263,11 +3263,12 @@ var ReactTable = function (_Methods) {
           _extends({
             key: i + '-' + column.id,
             className: classnames(classes, isResizable && 'rt-resizable-header', sort ? sort.desc ? '-sort-desc' : '-sort-asc' : '', isSortable && '-cursor-pointer', !show && '-hidden', pivotBy && pivotBy.slice(0, -1).includes(column.id) && 'rt-header-pivot'),
-            style: _extends({}, styles, {
+            style: _extends({
+
               flex: width + ' 0 auto',
               width: _.asPx(width),
               maxWidth: _.asPx(maxWidth)
-            }),
+            }, styles),
             toggleSort: function toggleSort(e) {
               if (isSortable) _this2.sortColumn(column, multiSort ? e.shiftKey : false);
             }
@@ -3547,11 +3548,12 @@ var ReactTable = function (_Methods) {
                 ,
                 _extends({ key: i2 + '-' + column.id,
                   className: classnames(classes, !cellInfo.expandable && !show && 'hidden', cellInfo.expandable && 'rt-expandable', (isBranch || isPreview) && 'rt-pivot'),
-                  style: _extends({}, styles, {
+                  style: _extends({
+
                     flex: width + ' 0 auto',
                     width: _.asPx(width),
                     maxWidth: _.asPx(maxWidth)
-                  })
+                  }, styles)
                 }, tdProps.rest, columnProps.rest, interactionProps),
                 resolvedCell
               );
@@ -3588,11 +3590,12 @@ var ReactTable = function (_Methods) {
           _extends({
             key: i + '-' + column.id,
             className: classnames(classes, !show && 'hidden'),
-            style: _extends({}, styles, {
+            style: _extends({
+
               flex: flex + ' 0 auto',
               width: _.asPx(width),
               maxWidth: _.asPx(maxWidth)
-            })
+            }, styles)
           }, tdProps.rest),
           _.normalizeComponent(PadRowComponent)
         );
@@ -3635,11 +3638,12 @@ var ReactTable = function (_Methods) {
           _extends({
             key: i + '-' + column.id,
             className: classnames(classes, !show && 'hidden'),
-            style: _extends({}, styles, {
+            style: _extends({
+
               flex: width + ' 0 auto',
               width: _.asPx(width),
               maxWidth: _.asPx(maxWidth)
-            })
+            }, styles)
           }, columnProps.rest, tFootTdProps.rest, columnFooterProps.rest),
           _.normalizeComponent(column.Footer, {
             data: sortedData,

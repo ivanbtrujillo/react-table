@@ -245,8 +245,8 @@ export default class ReactTable extends Methods(Lifecycle(Component)) {
           key={`${i}-${column.id}`}
           className={classnames(classes)}
           style={{
-            ...styles,
             ...flexStyles,
+            ...styles,
           }}
           {...rest}
         >
@@ -334,10 +334,11 @@ export default class ReactTable extends Methods(Lifecycle(Component)) {
             pivotBy && pivotBy.slice(0, -1).includes(column.id) && 'rt-header-pivot'
           )}
           style={{
-            ...styles,
+            
             flex: `${width} 0 auto`,
             width: _.asPx(width),
             maxWidth: _.asPx(maxWidth),
+            ...styles,
           }}
           toggleSort={e => {
             if (isSortable) this.sortColumn(column, multiSort ? e.shiftKey : false)
@@ -654,10 +655,11 @@ export default class ReactTable extends Methods(Lifecycle(Component)) {
                     (isBranch || isPreview) && 'rt-pivot'
                   )}
                   style={{
-                    ...styles,
+                    
                     flex: `${width} 0 auto`,
                     width: _.asPx(width),
                     maxWidth: _.asPx(maxWidth),
+                    ...styles,
                   }}
                   {...tdProps.rest}
                   {...columnProps.rest}
@@ -702,10 +704,11 @@ export default class ReactTable extends Methods(Lifecycle(Component)) {
           key={`${i}-${column.id}`}
           className={classnames(classes, !show && 'hidden')}
           style={{
-            ...styles,
+            
             flex: `${flex} 0 auto`,
             width: _.asPx(width),
             maxWidth: _.asPx(maxWidth),
+            ...styles,
           }}
           {...tdProps.rest}
         >
@@ -763,10 +766,11 @@ export default class ReactTable extends Methods(Lifecycle(Component)) {
           key={`${i}-${column.id}`}
           className={classnames(classes, !show && 'hidden')}
           style={{
-            ...styles,
+            
             flex: `${width} 0 auto`,
             width: _.asPx(width),
             maxWidth: _.asPx(maxWidth),
+            ...styles,
           }}
           {...columnProps.rest}
           {...tFootTdProps.rest}
